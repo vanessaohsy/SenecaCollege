@@ -63,8 +63,19 @@ footer {
 }
 footer p {
     margin: 0 auto;
-    padding: 0 0 0 10px;
+    padding: 0 0 10px 10px;
+}
+footer .name {
     color: #fff;
+}
+footer .git a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #4d4d4d;
+}
+footer .git a:hover {
+    text-decoration: underline;
+    color: #999999;
 }
 /* End: footer */
 /* Start: .main */
