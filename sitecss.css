@@ -1,0 +1,514 @@
+/********************************************************************
+I declare that my assignment is wholly my own work in accordance with Seneca
+Academic Policy. No part of this assignment has been copied manually or
+electronically from any other source (including web sites) except for the
+information supplied by the WEB222 instructors and / or made available in this
+assignment for my use.
+I also declare that no part of this assignment has been distributed to other
+students.
+Name: SEYEON, OH
+Dated: 10th Apr 2020
+********************************************************************/
+/* Start: common attribute */
+html, body {
+    clear: both;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body * {
+    margin: 0;
+    padding: 0;
+}
+li, dt, dd {
+    list-style-type: none;
+}
+/* End: common attribute */
+
+/* Start: media query - common */
+/* Start: header */
+header {
+    width: 100%;
+    background-color: #003DA6;
+}
+header .nav ul {
+    margin: 0 auto;
+    padding: 15px 0;
+    width: 80%;
+}
+header .nav li {
+    padding: 0 10px;
+    display: inline-block;
+}
+header .nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+header .nav li a:hover {
+    color:#777777;
+    text-decoration: underline;
+}
+/* End: header */
+/* Start: footer */
+footer {
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+    padding: 15px 0;
+    width: 100%;
+    background-color: #003DA6;
+}
+footer p {
+    margin: 0 auto;
+    padding: 0 0 0 10px;
+    color: #fff;
+}
+/* End: footer */
+/* Start: .main */
+.main h1 {
+    margin: 10px 0;
+    text-align: center;
+    font-weight: normal;
+}
+.main h2.greet {
+    margin: 10px 0;
+    font-weight: normal;
+}
+.main .greet span {
+    font-weight: bold;
+    color: #00008b;
+}
+.main .refTit {
+    margin: 20px 0;
+}
+.main section.qnaNav {
+    padding: 10px;
+    border: 1px solid #696969;
+}
+.main .qnaNav .move {
+    margin-bottom: 10px;
+    color: #2b2885;
+}
+.main .qnaNav ul {
+    padding-left: 20px;
+}
+.main .qnaNav ul li {
+    padding-bottom: 10px;
+    list-style-type: disc;
+}
+.main .qnaNav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #403d5c;
+}
+.main .qnaNav ul li a:hover {
+    color: #2600ff;
+}
+.main .qnaList {
+    width: 100%;
+}
+.main .qnaList li:before {
+    content: "*";
+    vertical-align: middle;
+    font-weight: bold;
+}
+.main .qnaList li {
+    padding: 0 0 20px 0;
+}
+.main .qnaList .que {
+    font-weight: bold;
+}
+.main .qnaList .ans {
+    padding: 10px 0 0 5px;
+}
+.main .qnaList .ans:before {
+    content: "";
+    padding-left: 15px;
+}
+/* End: .main */
+/* Start: main & inside contents control */
+.contents {
+    overflow: hidden;
+    padding-top: 15px;
+    width: 100%;
+    height: 100%;
+}
+.clearfix::after { 
+    /*
+    for older version of IE
+    */
+    content:".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear:both;
+}
+/* End: main & inside contents control */
+/* Start: #nav section.left */
+#nav .notice {
+    padding-bottom: 10px;
+    border-bottom:1px solid #696969;
+    font-weight: bold;
+}
+#nav > ul > li {
+    padding-bottom: 15px;
+}
+#nav h4.subMenuTitle {
+    margin:0 0 10px;
+    cursor: pointer;
+}
+#nav h4.subMenuTitle:hover {
+    color: #00008b;
+}
+#nav .subList > li a:hover {
+    color:#696969;
+    font-weight:bold;
+}
+#nav .subList > li a {
+    color:#000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-weight: lighter;
+}
+#nav .subList .star {
+    cursor: pointer;
+}
+.star span {
+    display: inline-block;
+    width: 1em;
+    content: "&#9733;";
+    color: #0099ff;
+}
+.star:hover span {
+    color: #2600ff;
+}
+
+/* End: #nav section.left */
+/* Start: section#product .right*/
+#product .notice a {
+    text-decoration: none;
+    color: #00008b;
+}
+#product .notice a:hover {
+    color: #919191;
+}
+#product h3 {
+    margin-bottom: 20px;
+    color: #00008b;
+    text-align: center;
+}
+.topItem {
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+    padding: 10px; 
+    border-top: 2px solid #00008b;
+    border-bottom: 2px solid #00008b;
+}
+.topItem .arr span {
+    position: absolute;
+    top: 110px;
+    z-index: 5;
+    font-weight: bolder;
+    font-size: xx-large;
+    color: #2600ff;
+    cursor: pointer;
+}
+.topItem .arr span:hover {
+    color: #403d5c;
+}
+.topItem .arr .left {
+    left:0;
+}
+.topItem .arr .right {
+    right:0;
+}
+.topItem ul.topList {
+    overflow: hidden;
+    position: relative;
+    clear: both;
+}
+.topItem .topList li {
+    float: left;
+    width: 30%;
+    min-width: 250px;
+    padding-left: 2.5%;
+}
+.topItem .topList li:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+.topItem .topList li a {
+    display: block;
+    width: 100%;
+}
+.topItem .topList li a img {
+    display: block;
+}
+.itemList dl {
+    width: 100%;
+}
+.itemList dt a {
+    display:block;
+}
+.itemList dt a img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+}
+.itemList dd {
+    margin: 10px 0 20px;
+}
+.itemList dd .title a {
+    padding: 10px 0;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+.itemList dd .title a:hover {
+    text-decoration: underline;
+    color: #6e6e6e;
+}
+.itemList dd .title .saleAlert {
+    margin-left: 5px;
+    font-weight: bold;
+    color: #dd2828;
+}
+.itemList dd .price {
+    font-weight: bold;
+    font-size: 90%;
+    color: #2b2885;
+}
+.itemList dd .price .ori {
+    margin-right: 5px; 
+    text-decoration: line-through;
+    color: #dd2828;
+}
+.itemList dd .price .sale {
+    color: #2b2885;
+}
+.itemList dd .detail {
+    font-size: 75%;
+    line-height: 1em;
+}
+.itemList dd .overview {
+    overflow: hidden;
+    padding: 10px 0;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+.itemList dd .overview .tit {
+    display: block;
+    font-weight: bold;
+    color: #2b2885;
+}
+.itemList dd ul.color {
+    overflow: hidden;
+    margin-top: 5px;
+    width:100%;
+}
+.itemList dd ul.color li {
+    float: left;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+/* Start: color option A-Z */
+.itemList dd ul.color .black {
+    background-color: #000;
+}
+.itemList dd ul.color .blue {
+    background-color: #00f;
+}
+.itemList dd ul.color .darkgrey {
+    background-color: #808080;
+}
+.itemList dd ul.color .grey {
+    background-color: #d3d3d3;
+}
+.itemList dd ul.color .gold {
+    background-color: #d4af37;
+}
+.itemList dd ul.color .silver {
+    background-color: #c0c0c0
+}
+.itemList dd ul.color .white {
+    background-color: #fff;
+}
+/* End: color option A-Z */
+.itemList dd ul.color li a {
+    display:block;
+    text-indent:-1000000px;
+}
+/* End: section#product .right*/
+/* End: media query - common */
+
+/* Start: media query - width: ~1023 for Mobile */
+@media (max-width:1023px) {
+    /* Start: header */
+    header .nav > ul li {
+        display: block;
+        text-align: center;
+    }
+    header .nav > ul li a {
+        font-size: 150%;
+    }  
+    /* End: header */
+    /* Start: .main */
+    .main {
+        margin: 0 auto;
+        width: 90%;
+    }
+    /* End: .main */
+    /* Start: #nav section.left */
+    #nav .notice {
+        font-size: 100%;
+    }
+    #nav > ul {
+        margin: 0 auto;
+        padding-top: 20px;
+        width: 80%;
+        min-width: 435px;
+    }
+    #nav .subMenuTitle {
+        font-size: 150%;
+    }
+    #nav .subList > li {
+        padding-bottom: 5px;
+    }
+    #nav .subList > li .checkBox {
+        display: none;
+        visibility: hidden;
+        width: 0px;
+    }
+    #nav .subList > li a, #nav .subList > li > label,  #nav .subList .star span  {
+        font-size: 130%;
+    }
+    #nav .subList > li > label:hover {
+        cursor: pointer;
+        font-weight: bold;
+        color: #00008b;
+    }
+    /* End: #nav section.left */
+    /* Start: section#product .right*/
+    section.qna {
+        margin: 15px 0;
+    }
+    #product {
+        padding-top:10px; 
+        width: 100%;
+        border-top: 1px solid #000;
+    }
+    #product .notice {
+        padding-bottom: 20px;
+    }
+    .topItem .arr {
+        overflow: hidden;
+        display: none;
+    }
+    .topItem .topList li {
+        float: none;
+        clear: both;
+        min-width: 90%;
+        margin: 0 auto;
+    }
+    .topItem .topList li img {
+        width: 100%;
+    }
+    .itemList {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .itemList dl {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #000;
+    }
+    .itemList li:last-child > dl {
+        border-bottom: 0;
+    }
+    .itemList dd {
+        font-size: 130%;
+    }
+    .itemList dd .title
+    {
+        margin: 10px 0;
+    }
+    .itemList dd .title a {
+        padding: 0;
+    }
+    /* End: section#product .right*/
+}
+/* End: media query - width: ~1023 for Mobile */
+
+/* Start: media query - width: 1024~ */
+@media (min-width:1024px) {
+    /* Start: .main */
+    .main {
+        margin: 0 auto;
+        width: 85%;
+    }
+    /* End: .main */
+    /* Start: main & inside contents control */
+    section.left {
+        margin-right: 10px;
+        padding: 10px;
+        width: 15%;
+        min-width: 150px;
+        height: 100%;
+        float: left;
+    }
+    section.right {
+        width: 79%;
+        padding: 0 0 10px;
+        float: right;
+    }
+
+    /* End: main & inside contents control */
+    /* Start: #nav section.left */
+    #nav {
+        border: 1px solid #696969;
+    }
+    #nav .notice {
+        font-size: 70%;
+    }
+    #nav > ul {
+        margin-top: 5px;
+    }
+    #nav .subList > li .checkBox {
+        display: inline;
+        margin-right:5px;
+    }
+    #nav .subList > li .checkBox:checked + label {
+        color: #00008b;
+        font-weight: bold;
+    }
+    /* End: #nav section.left */
+    /* Start: section#product .right*/
+    #itemContent {
+        padding: 10px 0 0 0;
+        width: 100%;
+    }
+    .itemList {
+        overflow: hidden;
+        position: relative;
+        clear: both;
+        width: 100%;
+    }
+    .itemList > li {
+        position: relative;
+        float: left;
+        display: block;
+        margin-right: 2%;
+        width: 30%;
+        min-width: 190px;
+    }
+    .itemList dl {
+        height: 470px;
+    }
+    /* End: section#product .right*/
+}
+/* End: media query - width: 1023~ */
